@@ -20,6 +20,6 @@ int main(void)
 	else if (d == 0)
 		printf("is %i and is 0\n", d);
 	else if (d < 6 && d != 0)
-		printf("%i is less than 6 and not 0\n", d);
+		printf("is %i and is less than 6 and not 0\n", d);
 	return (0);
 }
