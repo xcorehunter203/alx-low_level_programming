@@ -2,6 +2,10 @@
 #include <time.h>
 #include <stdio.h>
 /* more headers goes there */
+/**
+  *main - main is the entry point
+  *Return: return 0 (succsess)
+  */
 
 /* betty style doc for function main goes there */
 int main(void)
