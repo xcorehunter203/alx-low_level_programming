@@ -5,12 +5,13 @@
   */
 int main(void)
 {
-	int i = 1;
+	int i = 0;
 
 	while (i <= 9)
 	{
 		putchar(48 + i);
 		i++;
 	}
+	putchar("\n");
 	return (0);
 }
