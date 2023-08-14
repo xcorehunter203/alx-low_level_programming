@@ -9,6 +9,6 @@ int main(void)
 	for (x = 'a'; x <= 'z'; x++)
 		printf("%c", x);
 	for (y = 'A'; y <= 'Z'; y++)
-		printf("%c", y);
+		printf("%c\n", y);
 	return (0);
 }
