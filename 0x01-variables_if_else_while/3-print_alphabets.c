@@ -7,8 +7,8 @@ int main(void)
 {
 	char x = 'a', y = 'A';
 	for (x = 'a'; x <= 'z'; x++)
-		putchar("%i", x);
+		printf("%i", x);
 	for (y = 'A'; y <= 'Z'; y++)
-		putchar("%i", y);
+		printf("%i", y);
 	return (0);
 }
