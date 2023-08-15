@@ -10,10 +10,12 @@ int main(void)
 	while (i < 10)
 	{
 		putchar(48 + i);
+		while (i != 9)
+		{
 		putchar(',');
 		putchar(' ');
 		i++;
+		}
 	}
-	putchar(',');
 	return (0);
 }
