@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-  *main - main is the entry point
-  *Return: return 0 (succsess)
+  * print_alphabet - utilize on the _putchar function to print the alphabet a - z
+  *
   */
 
 void print_alphabet(void)
