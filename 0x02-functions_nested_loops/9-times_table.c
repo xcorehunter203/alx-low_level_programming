@@ -20,7 +20,7 @@ void times_table(void)
 				_putchar(' ');
 			else 
 				_putchar((prod / 10) + 48);/*get the frist digit */
-			_putchar((prod % 10) + 48);/*get the second digit */
+			_putchar((k % 10) + 48);/*get the second digit */
 		}
 		_putchar('\n');
 	}
