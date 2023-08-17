@@ -1,9 +1,16 @@
 #include "main.h"
+/**
+ * times_table - prints the 9 times table
+ *
+ * Example Table
+ * 0, 0, 0, 0,. ..
+ * 0, 1, 2, 3,. ..
+ */
 void times_table(void)
 {
 	int i, j, k;
-	
-	for(i = 0; i <= 9; i++)
+
+	for (i = 0; i <= 9; i++)
 	{
 		_putchar(48);
 		for (j = 1; j <= 9; j++)
@@ -18,7 +25,7 @@ void times_table(void)
 			 */
 			if (k <= 9)
 				_putchar(' ');
-			else 
+			else
 				_putchar((k / 10) + 48);/*get the frist digit */
 			_putchar((k % 10) + 48);/*get the second digit */
 		}
