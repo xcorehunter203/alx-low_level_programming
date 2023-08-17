@@ -19,7 +19,7 @@ void times_table(void)
 			if (k <= 9)
 				_putchar(' ');
 			else 
-				_putchar((prod / 10) + 48);/*get the frist digit */
+				_putchar((k / 10) + 48);/*get the frist digit */
 			_putchar((k % 10) + 48);/*get the second digit */
 		}
 		_putchar('\n');
