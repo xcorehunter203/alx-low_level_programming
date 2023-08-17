@@ -3,9 +3,6 @@
 /**
 *print_last_digit - computes the last digit
 *@n: takes type of input
-*
-*@x: last digit of n
-*
 *Return: always 0
 */
 
