@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * puts2 - prints every charecter of a string 
+ * puts2 - prints every charecter of a string
  *
  * @str: string parameter input
  *
- * Return: Nothing 
+ * Return: Nothing
  */
 
 void puts2(char *str)
