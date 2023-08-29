@@ -1,25 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * _strstr - prints the consecutive caracters of s1 that are in s2.
- * @haystack: source string
- * @needle: searching string
+ * print_diagsums - print additions of the two diagonals.
+ * @a: source matrix
+ * @size: size NxN of matrix
  *
- * Return: new string.
+ * Return: chessboard.
  */
-char *_strstr(char *haystack, char *needle)
+void print_diagsums(int *a, int size)
 {
-	for (; *haystack != '\0'; haystack++)
-	{
-		char *one = haystack;
-		char *two = needle;
+	int i, j, sumdiag1 = 0, sumdiag2 = 0, step1, step2;
 
-		while (*one == *two && *two != '\0')
-		{
-			one++;
-			two++;
-		}
-		if (*two == '\0')
-			return (haystack);
+	for (i = 0; i <= (size - 1); i++)
+	{
+		step1 =  (size + 1) * i;
+		sumdiag1 = sumdiag1 + *(a + step1);
 	}
-	return (NULL);
+
+	for (j = 1; j <= size; j++)
+	{
+		step2 = (size - 1) * j;
+		sumdiag2 = sumdiag2 + *(a + step2);
+	}
+	printf("%d, %d\n", sumdiag1, sumdiag2);
 }
