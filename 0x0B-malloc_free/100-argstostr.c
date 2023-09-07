@@ -1,83 +1,46 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _wcount - counts number of words
+ * _strlen - counts number of words
  * @sw: string
  *
  * Return: int
  */
-int _wcount(char *sw)
+int _strlen(char *c)
 {
-	int l, wc;
+	int size = 0;
 
-	l = 0, wc = 0;
-	if (*(sw + l) == ' ')
-		l++;
-	while (*(sw + l))
-	{
-		if (*(sw + l) == ' ' && *(sw + l - 1) != ' ')
-			wc++;
-		if (*(sw + l) != ' '  && *(sw + l + 1) == 0)
-			wc++;
-		l++;
-	}
-	return (wc);
+	for (; c[size] != '\0'; size++)
+	;
+	return (size);
 }
 /**
- * _trspace - Moves adress to remove trailig whitespaces
- * @st: string
- *
- * Return: Pointer
+ * *argstostr - description
+ * @ac: int
+ * @av: argument
+ * Return: string
  */
-char *_trspace(char *st)
+char *argstostr(int ac, char **av)
 {
-	while (*st == ' ')
-		st++;
-	return (st);
-}
-/**
- * strtow - splits a string into words
- * @str: string
- *
- * Return: Double Pointer
- */
-char **strtow(char *str)
-{
-	char **s, *ts;
-	int l, l2, wc, i, j, fr, k;
+	int i = 0, nc = 0, j = 0, cmpt = 0;
+	char *s;
 
-	if (str == NULL || *str == 0)
-		return (0);
-	fr = 0;
-	wc = _wcount(str);
-	if (wc == 0)
-		return (0);
-	s = malloc((wc + 1) * sizeof(char *));
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	for (; i < ac ; i++, nc++)
+		nc += _strlen(av[i]);
+
+	s = malloc(sizeof(char) * nc + 1);
 	if (s == 0)
-		return (0);
-	ts = _trspace(str);
-	for (i = 0; i < wc; i++)
+		return (NULL);
+
+	for (i = 0; i < ac; i++)
 	{
-		l = 0;
-		while (*(ts + l) != ' ' && *(ts + l) != 0)
-			l++;
-		s[i] = malloc((l + 1) * sizeof(char));
-		if (s[i] == 0)
-		{
-			fr = 1;
-			break;
-		}
-		for (j = 0, l2 = 0; l2 < l; l2++, j++)
-			s[i][j] = *(ts + l2);
-		s[i][j] = '\0';
-		ts = _trspace(ts + l);
+		for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+			s[cmpt] = av[i][j];
+		s[cmpt] = '\n';
+		cmpt++;
 	}
-	s[i] = NULL;
-	if (fr == 1)
-	{
-		for (k = 0; k <= i; k++)
-			free(s[k]);
-		free(s);
-	}
+	s[cmpt] = '\0';
 	return (s);
 }
